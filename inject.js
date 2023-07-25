@@ -1,4 +1,5 @@
 navigator.mediaDevices.getDisplayMedia().then(stream => {
+    console.log('selected media')
     const presenter = document.createElement('video');
     presenter.style.cssText = 'display:none;';
     presenter.autoplay = true;
@@ -9,19 +10,3 @@ navigator.mediaDevices.getDisplayMedia().then(stream => {
     });
     presenter.srcObject = stream;
 })
-
-// async function injectMain() {
-//     const stream = navigator.mediaDevices.getDisplayMedia();
-
-//     presenter = document.createElementNS('video');
-//     presenter.style.cssText = 'display:none';
-//     presenter.autoplay = true;
-//     document.getElementsByTagName('body')[0].appendChild(presenter);
-//     presenter.addEventListener('loadmetadata', () => {
-//         presenter.requestPictureInPicture();
-//     });
-    
-//     presenter.srcObject = stream;
-// }
-
-// injectMain(); 
